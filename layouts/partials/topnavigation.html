@@ -2,7 +2,7 @@
   <div class="col-sm-6">
     <div class="categories-block">
       {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-      <a href="{{ " /categories/ " | relLangURL }}{{ $name | urlize }}">{{ $name }}</a> {{ end }}
+      <a href="{{ "/categories/" | relURL }}{{ $name | urlize }}">{{ $name }}</a> {{ end }}
     </div>
   </div>
 
