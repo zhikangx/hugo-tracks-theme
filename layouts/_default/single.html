@@ -25,15 +25,17 @@
         </div>
         {{ end }}
 
+        {{ with .Site.Taxonomies.tags }}
         <div class="entry-sidebar-title">Tags</div>
-        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        {{ range $name, $taxonomy := . }}
         <div class="entry-tags">
           <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
         </div>
         {{ end }}
+        {{ end }}        
       </div>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-8">
       <div class="entry-content">
         {{ .Content }}
       </div>
